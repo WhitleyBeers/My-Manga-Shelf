@@ -1,0 +1,72 @@
+{
+  "-NO_dCeGEfKbotfoM5uf": {
+    "firebaseKey": "-NO_dCeGEfKbotfoM5uf",
+    "uid": "7Mh8g7uxf1bQTgbnGLonylVleBT2",
+    "title": "Shoah",
+    "description": "Phasellus in felis. Donec semper sapien a libero. Nam dui.",
+    "image_url": "http://dummyimage.com/137x100.png/5fa2dd/ffffff",
+    "genre": "Documentary|War",
+    "favorite": false,
+    "status": "Read"
+  },
+  "-NO_dCeK5uO8Rlir_GBd": {
+    "firebaseKey": "-NO_dCeK5uO8Rlir_GBd",
+    "uid": "7Mh8g7uxf1bQTgbnGLonylVleBT2",
+    "title": "Thief of Bagdad, The",
+    "description": "Sed ante. Vivamus tortor. Duis mattis egestas metus.",
+    "image_url": "http://dummyimage.com/237x100.png/ff4444/ffffff",
+    "genre": "Action|Adventure|Fantasy",
+    "favorite": false,
+    "status": "Read"
+  },
+  "-NO_dCeN17VK6yR-9rJF": {
+    "firebaseKey": "-NO_dCeN17VK6yR-9rJF",
+    "uid": "7Mh8g7uxf1bQTgbnGLonylVleBT2",
+    "title": "Bank, The",
+    "description": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+    "image_url": "http://dummyimage.com/227x100.png/ff4444/ffffff",
+    "genre": "Comedy",
+    "favorite": true,
+    "status": "Read"
+  },
+  "-NO_dCeROE6evVxfBq9J": {
+    "firebaseKey": "-NO_dCeROE6evVxfBq9J",
+    "uid": "7Mh8g7uxf1bQTgbnGLonylVleBT2",
+    "title": "Nativity 2: Danger in the Manger!",
+    "description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+    "image_url": "http://dummyimage.com/110x100.png/dddddd/000000",
+    "genre": "Children|Comedy",
+    "favorite": false,
+    "status": "Reading"
+  },
+  "-NO_dCeUu9Q8vE2ztASR": {
+    "firebaseKey": "-NO_dCeUu9Q8vE2ztASR",
+    "uid": "7Mh8g7uxf1bQTgbnGLonylVleBT2",
+    "title": "Superclásico",
+    "description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+    "image_url": "http://dummyimage.com/229x100.png/cc0000/ffffff",
+    "genre": "Comedy|Drama",
+    "favorite": true,
+    "status": "Read"
+  },
+  "-NO_dCeXZn4o4JO0Jvof": {
+    "firebaseKey": "-NO_dCeXZn4o4JO0Jvof",
+    "uid": "7Mh8g7uxf1bQTgbnGLonylVleBT2",
+    "title": "Paradise Canyon",
+    "description": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+    "image_url": "http://dummyimage.com/107x100.png/ff4444/ffffff",
+    "genre": "Crime|Western",
+    "favorite": true,
+    "status": "Reading"
+  },
+  "-NO_dCeZjDszbAefEOBx": {
+    "firebaseKey": "-NO_dCeZjDszbAefEOBx",
+    "uid": "7Mh8g7uxf1bQTgbnGLonylVleBT2",
+    "title": "Intouchables",
+    "description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+    "image_url": "http://dummyimage.com/187x100.png/5fa2dd/ffffff",
+    "genre": "Comedy|Drama",
+    "favorite": true,
+    "status": "Reading"
+  }
+}
