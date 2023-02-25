@@ -18,5 +18,43 @@ a {
 }
 
 body {
-  background-color: #88effd;
+  background-color: #073B4C;
+  color: #ffffff;
+}
+
+.btn-red {
+  background-color: #D72638;
+  border-color: #D72638;
+  color: #ffffff;
+}
+
+.btn-red:hover {
+  background-color: #c32232;
+  border-color: #c32232;
+}
+
+.btn-blue {
+  background-color: #35a2b1;
+  border-color: #35a2b1;
+  color:#ffffff;
+}
+
+.btn-blue:hover {
+  background-color: #297e89;
+  border-color: #297e89;
+}
+
+.btn-green {
+  background-color: #569207;
+  border-color: #569207;
+  color: #ffffff
+}
+
+.btn-green:hover {
+  background-color: #477a06;
+  border-color: #477a06
+}
+
+.navbar {
+  background-color: #232A2F;
 }

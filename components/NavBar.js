@@ -1,16 +1,17 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import Link from 'next/link';
+import { Navbar } from 'react-bootstrap';
 import { signOut } from '../utils/auth';
 
 export default function NavBar() {
   return (
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+    <Navbar collapseOnSelect expand="lg" variant="dark" className="navbar">
       <div className="container-fluid">
         <Link passHref href="/">
-          <a className="navbar-brand" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01">
-            CHANGE ME
-          </a>
+          <Navbar.Brand className="my-0">
+            <img alt="Navbar logo" src="/navbarlogo.png" /> My Manga Shelf
+          </Navbar.Brand>
         </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon" />
@@ -25,12 +26,12 @@ export default function NavBar() {
                 </a>
               </Link>
             </li>
-            <button type="button" className="btn btn-danger" onClick={signOut}>
+            <button type="button" className="btn btn-red" onClick={signOut}>
               Sign Out
             </button>
           </ul>
         </div>
       </div>
-    </nav>
+    </Navbar>
   );
 }
