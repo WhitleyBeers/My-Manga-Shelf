@@ -81,6 +81,19 @@ const deleteSeries = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// GET Series Volumes
+const getSeriesVolumes = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${dbUrl}/series_volume.json?orderBy="series_id"&equalTo="${firebaseKey}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
+
 export {
-  getAllSeries, getSingleSeries, addSeries, updateSeries, deleteSeries,
+  getAllSeries, getSingleSeries, addSeries, updateSeries, deleteSeries, getSeriesVolumes,
 };
