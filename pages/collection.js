@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { getAllSeries } from '../api/seriesData';
 import SeriesCollectionCards from '../components/cards/SeriesCollectionCards';

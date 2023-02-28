@@ -38,7 +38,7 @@ const viewSeriesWishlist = (seriesFirebaseKey) => new Promise((resolve, reject) 
 // DELETE Series Volumes (When a series is deleted, delete all volumes belonging to that series)
 const deleteSeriesVolumes = (seriesId) => new Promise((resolve, reject) => {
   getSeriesVolumes(seriesId).then((volumesArray) => {
-    const deleteVolumePromises = volumesArray.map((volume) => deleteVolume(volume.seriesId));
+    const deleteVolumePromises = volumesArray.map((volume) => deleteVolume(volume.firebaseKey));
 
     Promise.all(deleteVolumePromises).then(() => {
       deleteSeries(seriesId).then(resolve);
