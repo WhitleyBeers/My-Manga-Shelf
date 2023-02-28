@@ -58,3 +58,7 @@ body {
 .navbar {
   background-color: #232A2F;
 }
+
+.italic {
+  font-style: italic;
+}
