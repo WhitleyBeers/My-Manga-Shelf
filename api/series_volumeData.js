@@ -76,8 +76,8 @@ const deleteVolume = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 // VOLUMES IN COLLECTION
-const getOwnedVolumes = (uid) => new Promise((resolve, reject) => {
-  fetch(`${dbUrl}/series_volume.json?orderBy="uid"&equalTo="${uid}"`, {
+const getOwnedVolumes = (seriesId) => new Promise((resolve, reject) => {
+  fetch(`${dbUrl}/series_volume.json?orderBy="series_id"&equalTo="${seriesId}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

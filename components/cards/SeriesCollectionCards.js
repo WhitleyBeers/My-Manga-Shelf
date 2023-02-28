@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card, Dropdown } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { deleteSeriesVolumes } from '../../api/mergeData';
-import { getSeriesVolumes } from '../../api/seriesData';
+import { getOwnedVolumes } from '../../api/series_volumeData';
 
 export default function SeriesCollectionCards({ seriesObj, onUpdate }) {
   const [volumes, setVolumes] = useState([]);
@@ -13,7 +13,7 @@ export default function SeriesCollectionCards({ seriesObj, onUpdate }) {
   };
 
   const volumeCount = () => {
-    getSeriesVolumes(seriesObj.firebaseKey).then(setVolumes);
+    getOwnedVolumes(seriesObj.firebaseKey).then(setVolumes);
   };
 
   useState(() => {
