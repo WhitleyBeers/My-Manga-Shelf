@@ -92,8 +92,8 @@ const getOwnedVolumes = (seriesId) => new Promise((resolve, reject) => {
 });
 
 // VOLUMES IN WISHLIST
-const getWishlistVolumes = (uid) => new Promise((resolve, reject) => {
-  fetch(`${dbUrl}/series_volume.json?orderBy="uid"&equalTo="${uid}"`, {
+const getWishlistVolumes = (seriesId) => new Promise((resolve, reject) => {
+  fetch(`${dbUrl}/series_volume.json?orderBy="series_id"&equalTo="${seriesId}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

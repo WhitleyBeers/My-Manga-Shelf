@@ -1,12 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
-import { Card, Dropdown } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { Card, Dropdown } from 'react-bootstrap';
 import { deleteSeriesVolumes } from '../../api/mergeData';
-import { getOwnedVolumes } from '../../api/series_volumeData';
+import { getWishlistVolumes } from '../../api/series_volumeData';
 
-export default function SeriesCollectionCards({ seriesObj, onUpdate }) {
+export default function SeriesWishlistCards({ seriesObj, onUpdate }) {
   const [volumes, setVolumes] = useState([]);
+
   const deleteThisSeries = () => {
     if (window.confirm(`Delete ${seriesObj.title}?`)) {
       deleteSeriesVolumes(seriesObj.firebaseKey).then(() => onUpdate());
@@ -14,7 +15,7 @@ export default function SeriesCollectionCards({ seriesObj, onUpdate }) {
   };
 
   const volumeCount = () => {
-    getOwnedVolumes(seriesObj.firebaseKey).then(setVolumes);
+    getWishlistVolumes(seriesObj.firebaseKey).then(setVolumes);
   };
 
   useEffect(() => {
@@ -26,20 +27,19 @@ export default function SeriesCollectionCards({ seriesObj, onUpdate }) {
       <Card.Img src={seriesObj.image_url} alt={seriesObj.title} style={{ height: '250px', width: '175px' }} className="mx-auto" />
       <Card.Title>
         {seriesObj.title}
-        {seriesObj.favorite ? '❤' : ''}
       </Card.Title>
       <Card.Text>
-        {volumes.length} volumes in your collection
+        {volumes.length} volumes in your wishlist
       </Card.Text>
       <Dropdown>
         <Dropdown.Toggle>
           Options
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          <Dropdown.Item href={`/collection/${seriesObj.firebaseKey}`}>
+          <Dropdown.Item href={`/wishlist/${seriesObj.firebaseKey}`}>
             View
           </Dropdown.Item>
-          <Dropdown.Item href={`/collection/edit/${seriesObj.firebaseKey}`}>
+          <Dropdown.Item href={`/wishlist/edit/${seriesObj.firebaseKey}`}>
             Edit
           </Dropdown.Item>
           <Dropdown.Item onClick={deleteThisSeries}>
@@ -51,13 +51,12 @@ export default function SeriesCollectionCards({ seriesObj, onUpdate }) {
   );
 }
 
-SeriesCollectionCards.propTypes = {
+SeriesWishlistCards.propTypes = {
   seriesObj: PropTypes.shape({
     firebaseKey: PropTypes.string,
     uid: PropTypes.string,
     title: PropTypes.string,
     image_url: PropTypes.string,
-    favorite: PropTypes.bool,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };
