@@ -13,16 +13,20 @@ export default function VolumeCollectionCards({ volumeObj, onUpdate }) {
   };
 
   return (
-    <Card className="container-fluid">
+    <Card className="volume-card container-fluid my-2">
       <Row>
-        <Col sm={6}>
+        <Col xs={5}>
           {volumeObj.volume_name}
         </Col>
-        <Col sm={3}>
-          <Button className="edit-link-btn" />Edit
+        <Col xs={3}>
+          <Button className="edit-link-btn">
+            Edit
+          </Button>
         </Col>
-        <Col sm={3}>
-          <Button className="delete-link-btn" onClick={deleteThisVolume} />Delete
+        <Col xs={3}>
+          <Button className="delete-link-btn" onClick={deleteThisVolume}>
+            Delete
+          </Button>
         </Col>
       </Row>
     </Card>

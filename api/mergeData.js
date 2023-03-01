@@ -29,7 +29,7 @@ const viewSeriesCollection = (seriesFirebaseKey) => new Promise((resolve, reject
 const viewSeriesWishlist = (seriesFirebaseKey) => new Promise((resolve, reject) => {
   Promise.all([getSingleSeries(seriesFirebaseKey), getWishlistVolumes(seriesFirebaseKey)])
     .then(([seriesObject, seriesArray]) => {
-      resolve({ seriesObject, volumes: seriesArray });
+      resolve({ ...seriesObject, volumes: seriesArray });
     }).catch((error) => reject(error));
 });
 
