@@ -28,7 +28,7 @@ export default function ViewCollectionSeries() {
       <div className="d-flex">
         <div className="mt-1 mx-auto">
           <h2>
-            {seriesDetails.title}
+            {seriesDetails.title} {seriesDetails.favorite ? '❤' : ''}
           </h2>
           <div className="d-flex">
             <img src={seriesDetails.image_url} alt={seriesDetails.title} style={{ height: '224px', width: '159px' }} />
@@ -38,7 +38,7 @@ export default function ViewCollectionSeries() {
           </div>
           {seriesDetails.genre}
           <p>
-            {seriesDetails.favorite ? '❤' : ''}
+            <em>{seriesDetails.status}</em>
           </p>
           <Button className="btn-green py-1">Edit</Button>
         </div>
