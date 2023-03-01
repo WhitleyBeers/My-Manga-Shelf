@@ -23,20 +23,14 @@ const getAllSeries = (uid) => new Promise((resolve, reject) => {
 
 // GET Single Series
 const getSingleSeries = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${dbUrl}/series/${firebaseKey}.json"`, {
+  fetch(`${dbUrl}/series/${firebaseKey}.json`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   })
     .then((response) => response.json())
-    .then((data) => {
-      if (data) {
-        resolve(Object.values(data));
-      } else {
-        resolve([]);
-      }
-    })
+    .then((data) => resolve(data))
     .catch(reject);
 });
 
