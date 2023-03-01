@@ -2,7 +2,7 @@
 import {
   deleteSeries, getSeriesVolumes, getSingleSeries,
 } from './seriesData';
-import { deleteVolume } from './series_volumeData';
+import { deleteVolume, getOwnedVolumes, getWishlistVolumes } from './series_volumeData';
 
 // const dbUrl = clientCredentials.databaseURL;
 
@@ -19,19 +19,17 @@ import { deleteVolume } from './series_volumeData';
 
 // GET Collection Series Volumes
 const viewSeriesCollection = (seriesFirebaseKey) => new Promise((resolve, reject) => {
-  Promise.all([getSingleSeries(seriesFirebaseKey), getSeriesVolumes(seriesFirebaseKey)])
+  Promise.all([getSingleSeries(seriesFirebaseKey), getOwnedVolumes(seriesFirebaseKey)])
     .then(([seriesObject, seriesArray]) => {
-      const collectionVolumes = Object.values(seriesArray).filter((item) => item.isOwned);
-      resolve({ ...seriesObject, volumes: collectionVolumes });
+      resolve({ ...seriesObject, volumes: seriesArray });
     }).catch((error) => reject(error));
 });
 
 // GET Wishlist Series Volumes
 const viewSeriesWishlist = (seriesFirebaseKey) => new Promise((resolve, reject) => {
-  Promise.all([getSingleSeries(seriesFirebaseKey), getSeriesVolumes(seriesFirebaseKey)])
+  Promise.all([getSingleSeries(seriesFirebaseKey), getWishlistVolumes(seriesFirebaseKey)])
     .then(([seriesObject, seriesArray]) => {
-      const wishlistVolumes = Object.values(seriesArray).filter((item) => item.isOwned === false);
-      resolve({ ...seriesObject, volumes: wishlistVolumes });
+      resolve({ ...seriesObject, volumes: seriesArray });
     }).catch((error) => reject(error));
 });
 

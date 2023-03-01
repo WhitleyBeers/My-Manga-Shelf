@@ -62,3 +62,34 @@ body {
 .italic {
   font-style: italic;
 }
+
+.volume-card {
+  background: transparent;
+  color: white;
+  border: white 1px solid;
+  padding: .5rem;
+}
+
+.edit-link-btn {
+  background: transparent;
+  border-color: transparent;
+  color: #477a06;
+}
+
+.edit-link-btn:hover, .edit-link-btn:active:focus {
+  background: transparent;
+  border-color: transparent;
+  color: white;
+}
+
+.delete-link-btn {
+  background: transparent;
+  border-color: transparent;
+  color: #D72638;
+}
+
+.delete-link-btn:hover, .delete-link-btn:active:focus {
+  background: transparent;
+  border-color: transparent;
+  color: white;
+}
