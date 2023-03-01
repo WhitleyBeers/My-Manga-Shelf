@@ -33,7 +33,7 @@ export default function UserProfile() {
       <h4><span className="italic">Email address:</span> {user.email}</h4>
       <h5><span className="italic">Last login:</span> {user.metadata.lastSignInTime}</h5>
       <h6>{collectionVolumes.length} volumes in collection</h6>
-      <h6>{wishlistVolumes.length} volumes in wislist</h6>
+      <h6>{wishlistVolumes.length} volumes in wishlist</h6>
     </div>
   );
 }
