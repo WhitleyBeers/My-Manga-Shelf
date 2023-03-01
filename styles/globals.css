@@ -93,3 +93,15 @@ body {
   border-color: transparent;
   color: white;
 }
+
+.add-link-btn {
+  background: transparent;
+  border-color: transparent;
+  color: #35a2b1;
+}
+
+.add-link-btn:hover, .delete-link-btn:active:focus {
+  background: transparent;
+  border-color: transparent;
+  color: white;
+}
