@@ -1,14 +1,8 @@
-// import { clientCredentials } from '../utils/client';
-
-const dbUrl = 'https://api.mangadex.org/';
-// const clientId = clientCredentials.malClientId;
+const dbUrl = 'https://api.jikan.moe/v4/manga';
 
 const getMangaInformation = (query) => new Promise((resolve, reject) => {
-  fetch(`${dbUrl}/manga?title=${query}&includes[]=cover_art`, {
+  fetch(`${dbUrl}?q=${query}&genres_exclude=12&order_by="title"`, {
     method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
   })
     .then((response) => response.json())
     .then((data) => resolve(Object.values(data.data)))
