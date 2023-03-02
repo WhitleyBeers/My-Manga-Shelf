@@ -39,7 +39,7 @@ body {
   color:#ffffff;
 }
 
-.btn-blue:hover {
+.btn-blue:hover, .btn-blue:active:focus {
   background-color: #297e89;
   border-color: #297e89;
 }
@@ -50,7 +50,7 @@ body {
   color: #ffffff
 }
 
-.btn-green:hover {
+.btn-green:hover, .btn-green:active:focus {
   background-color: #477a06;
   border-color: #477a06
 }
@@ -100,8 +100,12 @@ body {
   color: #35a2b1;
 }
 
-.add-link-btn:hover, .delete-link-btn:active:focus {
+.add-link-btn:hover, .add-link-btn:active:focus {
   background: transparent;
   border-color: transparent;
   color: white;
+}
+
+.search-manga {
+  border-radius: 0 5px 5px;
 }
