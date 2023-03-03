@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from 'next/link';
 import React, { useState } from 'react';
 import { Button, Form, InputGroup } from 'react-bootstrap';
 import getMangaInformation from '../api/extData';
@@ -28,9 +29,7 @@ export default function NewSeriesView() {
       </InputGroup>
       <p>
         Can&apos;t find what you&apos;re looking for?
-        <Button className="m-0 p-0 add-link-btn">
-          Click here to add it manually
-        </Button>
+        Click <Link href="/newSeries" passHref>here</Link> to add it manually
       </p>
       {results.map((result) => (
         <MangaSearchCards key={result.mal_id} mangaObj={result} />
