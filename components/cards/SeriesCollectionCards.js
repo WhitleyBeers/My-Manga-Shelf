@@ -39,7 +39,7 @@ export default function SeriesCollectionCards({ seriesObj, onUpdate }) {
           <Dropdown.Item href={`/collection/${seriesObj.firebaseKey}`}>
             View
           </Dropdown.Item>
-          <Dropdown.Item href={`/collection/edit/${seriesObj.firebaseKey}`}>
+          <Dropdown.Item href={`/collection/series/edit/${seriesObj.firebaseKey}`}>
             Edit
           </Dropdown.Item>
           <Dropdown.Item onClick={deleteThisSeries}>
