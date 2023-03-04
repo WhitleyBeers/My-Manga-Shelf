@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/exhaustive-deps */
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
@@ -27,20 +28,22 @@ export default function ViewCollectionSeries() {
     <>
       <div className="d-flex">
         <div className="mt-1 mx-auto">
+          {/* <div className="d-flex"> */}
+          <img src={seriesDetails.image_url} alt={seriesDetails.title} style={{ height: '224px', width: '159px' }} />
           <h2>
             {seriesDetails.title} {seriesDetails.favorite ? '❤' : ''}
           </h2>
-          <div className="d-flex">
-            <img src={seriesDetails.image_url} alt={seriesDetails.title} style={{ height: '224px', width: '159px' }} />
-            <span className="mx-1">
-              {seriesDetails.description}
-            </span>
+          <div className="mx-1">
+            <em>{seriesDetails.genre}</em>
           </div>
-          {seriesDetails.genre}
+          {/* </div> */}
+          {seriesDetails.description}
           <p>
             <em>{seriesDetails.status}</em>
           </p>
-          <Button className="btn-green py-1">Edit</Button>
+          <Link href={`/collection/series/edit/${firebaseKey}`} passHref>
+            <Button className="btn-green py-1">Edit</Button>
+          </Link>
         </div>
       </div>
       <hr />
