@@ -9,15 +9,18 @@ import { signOut } from '../utils/auth';
 
 export default function NavBar() {
   return (
-    <Navbar collapseOnSelect expand="lg" variant="dark" className="navbar">
+    <Navbar collapseOnSelect expand="false" variant="dark" className="navbar">
       <Container className="mx-0">
         <Link passHref href="/">
           <Navbar.Brand className="my-0">
-            <img alt="Navbar logo" src="/navbarlogo.png" /> My Manga Shelf
+            <img alt="Navbar logo" src="/navbarlogo.png" />
           </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav>
+            My Manga Shelf
+          </Nav>
           <Nav className="mx-2">
             <Link passHref href="/collection">
               <Nav.Link>Collection</Nav.Link>

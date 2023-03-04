@@ -56,7 +56,10 @@ body {
 }
 
 .navbar {
-  background-color: #232A2F;
+  background-color: #073B4C;
+  position: sticky;
+  top: 0;
+  z-index: 3;
 }
 
 .italic {
