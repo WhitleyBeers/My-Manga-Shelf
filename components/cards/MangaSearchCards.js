@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 
 export default function MangaSearchCards({ mangaObj }) {
   return (
@@ -16,7 +17,9 @@ export default function MangaSearchCards({ mangaObj }) {
       <Card.Text className="text-muted">
         {mangaObj.genres.map((genre) => genre.name).join('/')}
       </Card.Text>
-      <Button className="btn-green">Choose</Button>
+      <Link href={`/series/${mangaObj.mal_id}`} passHref>
+        <Button className="btn-green">Choose</Button>
+      </Link>
     </Card>
   );
 }

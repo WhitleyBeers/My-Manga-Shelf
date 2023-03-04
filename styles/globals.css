@@ -56,7 +56,11 @@ body {
 }
 
 .navbar {
-  background-color: #232A2F;
+  background-color: #073B4C;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  width: 100%;
 }
 
 .italic {
@@ -108,4 +112,21 @@ body {
 
 .search-manga {
   border-radius: 0 5px 5px;
+}
+
+.card-dropdown {
+  background-color: transparent;
+  border-radius: 2;
+  color: #073B4C;
+  border: solid #073B4C 1px;
+}
+
+.card-dropdown:focus {
+  background-color: #073B4C;
+  color: white;
+}
+
+.offcanvas {
+  background-color: #073B4C;
+  color: white;
 }

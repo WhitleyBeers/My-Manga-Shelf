@@ -1,24 +1,32 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import {
-  Button, Container, Nav, Navbar,
+  Button, CloseButton, Container, Nav, Navbar, Offcanvas,
 } from 'react-bootstrap';
 import { signOut } from '../utils/auth';
 
 export default function NavBar() {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
-    <Navbar collapseOnSelect expand="lg" variant="dark" className="navbar">
+    <Navbar collapseOnSelect expand="false" variant="dark" className="navbar">
       <Container className="mx-0">
-        <Link passHref href="/">
-          <Navbar.Brand className="my-0">
-            <img alt="Navbar logo" src="/navbarlogo.png" /> My Manga Shelf
-          </Navbar.Brand>
-        </Link>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mx-2">
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={handleShow} />
+        <Navbar.Offcanvas show={show} className="offcanvas">
+          <Offcanvas.Header>
+            <CloseButton onClick={handleClose} variant="white" />
+          </Offcanvas.Header>
+          <Link passHref href="/">
+            <Navbar.Brand className="my-2 text-center" onClick={handleClose}>
+              <img alt="Navbar logo" src="/navbarlogo.png" />
+            </Navbar.Brand>
+          </Link>
+          <Nav className="mx-2 text-center" onClick={handleClose}>
             <Link passHref href="/collection">
               <Nav.Link>Collection</Nav.Link>
             </Link>
@@ -32,7 +40,7 @@ export default function NavBar() {
               <Button type="button" className="btn-red" onClick={signOut}>Sign Out</Button>
             </Link>
           </Nav>
-        </Navbar.Collapse>
+        </Navbar.Offcanvas>
       </Container>
     </Navbar>
   );

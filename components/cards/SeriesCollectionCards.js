@@ -32,14 +32,14 @@ export default function SeriesCollectionCards({ seriesObj, onUpdate }) {
         {volumes.length} volumes in your collection
       </Card.Text>
       <Dropdown>
-        <Dropdown.Toggle>
+        <Dropdown.Toggle className="card-dropdown">
           Options
         </Dropdown.Toggle>
         <Dropdown.Menu>
           <Dropdown.Item href={`/collection/${seriesObj.firebaseKey}`}>
             View
           </Dropdown.Item>
-          <Dropdown.Item href={`/collection/edit/${seriesObj.firebaseKey}`}>
+          <Dropdown.Item href={`/collection/series/edit/${seriesObj.firebaseKey}`}>
             Edit
           </Dropdown.Item>
           <Dropdown.Item onClick={deleteThisSeries}>

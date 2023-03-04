@@ -8,8 +8,6 @@ import { useAuth } from '../../utils/context/authContext';
 import { addSeries, updateSeries } from '../../api/seriesData';
 
 const initialState = {
-  firebaseKey: '',
-  uid: '',
   title: '',
   description: '',
   image_url: '',
@@ -24,7 +22,7 @@ export default function SeriesForm({ obj }) {
   const router = useRouter();
 
   useEffect(() => {
-    if (obj) setFormInput(obj);
+    if (obj.mal_id || obj.firebaseKey) setFormInput(obj);
   }, [obj, user]);
 
   const handleChange = (e) => {
@@ -57,11 +55,11 @@ export default function SeriesForm({ obj }) {
     <Form onSubmit={handleSubmit} className="text-black mt-2">
       <h1 className="text-white">{obj.firebaseKey ? 'Edit' : 'Add' } Series</h1>
 
-      <FloatingLabel label="Series Title" className="mb-3">
+      <FloatingLabel controlId="floatingInput1" label="Series Title" className="mb-3">
         <Form.Control
           type="text"
           name="title"
-          value={formInput.name}
+          value={formInput.title}
           onChange={handleChange}
           required
         />
@@ -71,7 +69,7 @@ export default function SeriesForm({ obj }) {
         <Form.Control
           type="url"
           name="image_url"
-          value={formInput.name}
+          value={formInput.image_url}
           onChange={handleChange}
           required
         />
@@ -81,7 +79,7 @@ export default function SeriesForm({ obj }) {
         <Form.Control
           type="text"
           name="genre"
-          value={formInput.name}
+          value={formInput.genre}
           onChange={handleChange}
           required
         />
@@ -92,7 +90,7 @@ export default function SeriesForm({ obj }) {
           as="textarea"
           style={{ height: '100px' }}
           name="description"
-          value={formInput.name}
+          value={formInput.description}
           onChange={handleChange}
           required
         />
@@ -113,7 +111,8 @@ export default function SeriesForm({ obj }) {
         }}
       />
 
-      <Button type="submit" className="mt-2">{obj.firebaseKey ? 'Update' : 'Add'} Series</Button>
+      <Button type="submit" className="mt-2 mx-1 btn-blue">{obj.firebaseKey ? 'Update' : 'Add'} Series</Button>
+      <Button className="mt-2 mx-1 btn-red" onClick={() => router.back()}>Cancel</Button>
 
     </Form>
   );
@@ -129,6 +128,7 @@ SeriesForm.propTypes = {
     genre: PropTypes.string,
     favorite: PropTypes.bool,
     status: PropTypes.string,
+    mal_id: PropTypes.string,
   }),
 };
 
