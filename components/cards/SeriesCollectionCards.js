@@ -32,7 +32,7 @@ export default function SeriesCollectionCards({ seriesObj, onUpdate }) {
         {volumes.length} volumes in your collection
       </Card.Text>
       <Dropdown>
-        <Dropdown.Toggle>
+        <Dropdown.Toggle className="card-dropdown">
           Options
         </Dropdown.Toggle>
         <Dropdown.Menu>
