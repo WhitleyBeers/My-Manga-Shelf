@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/exhaustive-deps */
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
@@ -41,9 +40,8 @@ export default function ViewCollectionSeries() {
           <p>
             <em>{seriesDetails.status}</em>
           </p>
-          <Link href={`/collection/series/edit/${firebaseKey}`} passHref>
-            <Button className="btn-green py-1">Edit</Button>
-          </Link>
+          <Button className="btn-green py-1" onClick={() => router.push(`/collection/series/edit/${firebaseKey}`)}>Edit</Button>
+          <Button className="btn-blue ms-1 py-1" onClick={() => router.push('/collection/volume/new')}>Add a Volume</Button>
         </div>
       </div>
       <hr />

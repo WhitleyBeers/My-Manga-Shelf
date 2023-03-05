@@ -23,14 +23,14 @@ const getAllVolumes = (uid) => new Promise((resolve, reject) => {
 
 // GET Single Volume
 const getSingleVolume = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${dbUrl}/series_volume/${firebaseKey}.json"`, {
+  fetch(`${dbUrl}/series_volume/${firebaseKey}.json`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   })
     .then((response) => response.json())
-    .then((data) => resolve(Object.values(data)))
+    .then((data) => resolve(data))
     .catch(reject);
 });
 
