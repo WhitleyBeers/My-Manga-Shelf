@@ -77,7 +77,7 @@ body {
 .edit-link-btn {
   background: transparent;
   border-color: transparent;
-  color: #477a06;
+  color: #73c20d;
 }
 
 .edit-link-btn:hover, .edit-link-btn:active:focus {
@@ -89,7 +89,7 @@ body {
 .delete-link-btn {
   background: transparent;
   border-color: transparent;
-  color: #D72638;
+  color: #ff6a79;
 }
 
 .delete-link-btn:hover, .delete-link-btn:active:focus {
@@ -101,7 +101,7 @@ body {
 .add-link-btn {
   background: transparent;
   border-color: transparent;
-  color: #35a2b1;
+  color: #4adef1;
 }
 
 .add-link-btn:hover, .add-link-btn:active:focus {
@@ -129,4 +129,9 @@ body {
 .offcanvas {
   background-color: #073B4C;
   color: white;
+}
+
+.link-blue {
+  color: #79e5f3;
+  font-style: italic;
 }

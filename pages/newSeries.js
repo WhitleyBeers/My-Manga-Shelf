@@ -29,7 +29,7 @@ export default function NewSeriesView() {
       </InputGroup>
       <p>
         Can&apos;t find what you&apos;re looking for?
-        Click <Link href="/series/new" passHref>here</Link> to add it manually
+        You might need to search for the Japanese name!  You can also click <Link href="/series/new" passHref><span className="link-blue">here</span></Link> to add it manually
       </p>
       {results.map((result) => (
         <MangaSearchCards key={result.mal_id} mangaObj={result} />

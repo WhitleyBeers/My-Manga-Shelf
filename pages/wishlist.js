@@ -22,7 +22,7 @@ export default function WishlistView() {
     <div className="text-center">
       <h1 className="my-4">Your Wishlist</h1>
       <ButtonGroup>
-        <Button className="btn-blue" onClick={() => router.push('/new')}>
+        <Button className="btn-blue" onClick={() => router.push('/newSeries')}>
           Add New Series
         </Button>
       </ButtonGroup>

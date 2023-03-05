@@ -17,7 +17,7 @@ export default function NavBar() {
     <Navbar collapseOnSelect expand="false" variant="dark" className="navbar">
       <Container className="mx-0">
         <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={handleShow} />
-        <Navbar.Offcanvas show={show} className="offcanvas">
+        <Navbar.Offcanvas show={show} className="offcanvas" onClick={handleClose}>
           <Offcanvas.Header>
             <CloseButton onClick={handleClose} variant="white" />
           </Offcanvas.Header>
