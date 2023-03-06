@@ -2,8 +2,8 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { Button, Form, InputGroup } from 'react-bootstrap';
-import { getMangaInformation } from '../api/extData';
-import MangaSearchCards from '../components/cards/MangaSearchCards';
+import { getMangaInformation } from '../../api/extData';
+import MangaSearchCards from '../../components/cards/MangaSearchCards';
 
 export default function NewSeriesView() {
   const [query, setQuery] = useState('');
