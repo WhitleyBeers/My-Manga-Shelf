@@ -41,7 +41,7 @@ export default function ViewWishlistSeries() {
             <em>{seriesDetails.status}</em>
           </p>
           <Button className="btn-green me-1 py-1" onClick={() => router.push(`/collection/series/edit/${firebaseKey}`)}>Edit</Button>
-          <Button className="btn-blue ms-1 py-1">Add a Volume</Button>
+          <Button className="btn-blue ms-1 py-1" onClick={() => router.push('/wishlist/volume/new')}>Add a Volume</Button>
         </div>
       </div>
       <hr />

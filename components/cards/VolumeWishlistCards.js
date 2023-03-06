@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 import {
   Button, ButtonGroup, Card, Col, Row,
 } from 'react-bootstrap';
+import { useRouter } from 'next/router';
 import { deleteVolume, updateVolume } from '../../api/series_volumeData';
 
 export default function VolumeWishlistCards({ volumeObj, onUpdate }) {
+  const router = useRouter();
+
   const deleteThisVolume = () => {
     if (window.confirm(`Delete ${volumeObj.volume_name}?`)) {
       deleteVolume(volumeObj.firebaseKey).then(() => onUpdate());
@@ -33,7 +36,10 @@ export default function VolumeWishlistCards({ volumeObj, onUpdate }) {
           </Row>
           <Row>
             <ButtonGroup>
-              <Button className="edit-link-btn">
+              <Button
+                className="edit-link-btn"
+                onClick={() => router.push(`/wishlist/volume/edit/${volumeObj.firebaseKey}`)}
+              >
                 Edit
               </Button>
               <Button className="delete-link-btn" onClick={deleteThisVolume}>
