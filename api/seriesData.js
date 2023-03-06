@@ -88,6 +88,26 @@ const getSeriesVolumes = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// SEARCH SERIES
+const searchSeries = (query, uid) => new Promise((resolve, reject) => {
+  fetch(`${dbUrl}/series.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const searchItems = Object.values(data).filter((item) => (item.title.toLowerCase().includes(query)));
+      if (searchItems) {
+        resolve(searchItems);
+      } else {
+        resolve([]);
+      }
+    })
+    .catch(reject);
+});
+
 export {
-  getAllSeries, getSingleSeries, addSeries, updateSeries, deleteSeries, getSeriesVolumes,
+  getAllSeries, getSingleSeries, addSeries, updateSeries, deleteSeries, getSeriesVolumes, searchSeries,
 };

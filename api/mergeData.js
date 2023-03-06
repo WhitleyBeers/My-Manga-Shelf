@@ -1,21 +1,7 @@
-// import { clientCredentials } from '../utils/client';
 import {
   deleteSeries, getSeriesVolumes, getSingleSeries,
 } from './seriesData';
 import { deleteVolume, getOwnedVolumes, getWishlistVolumes } from './series_volumeData';
-
-// const dbUrl = clientCredentials.databaseURL;
-
-// GET Collection Series (Series with volumes that isOwned)
-// const getCollectionSeries = (uid) => new Promise((resolve, reject) => {
-//   Promise.all([getAllSeries(uid), getOwnedVolumes(uid)])
-//     .then(([seriesArray, volumeArray]) => {
-//       const collection = seriesArray.filter((series) => (volumeArray.includes((volume) => volume.series_id === series.firebaseKey)));
-//       resolve(collection);
-//     }).catch((error) => reject(error));
-// });
-
-// GET Wishlist Series (Series with volumes !isOwned)
 
 // GET Collection Series Volumes
 const viewSeriesCollection = (seriesFirebaseKey) => new Promise((resolve, reject) => {
@@ -43,6 +29,17 @@ const deleteSeriesVolumes = (seriesId) => new Promise((resolve, reject) => {
     });
   }).catch((error) => reject(error));
 });
+
+// GET Series with Owned Volumes
+// const getOwnedSeries = (uid) => new Promise((resolve, reject) => {
+//   getAllSeries(uid).then((seriesArray) => {
+//     const volumes = seriesArray.map((singleSeries) => getOwnedVolumes(singleSeries.firebaseKey));
+//     volumes.filter((item) => item.)
+//   })
+//     .then((response) => response.json())
+//     .then((data) => resolve(Object.values(data)))
+//     .catch(reject);
+// });
 
 export {
   viewSeriesCollection, viewSeriesWishlist, deleteSeriesVolumes,
