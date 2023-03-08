@@ -1,23 +1,17 @@
-import { signOut } from '../utils/auth';
+/* eslint-disable @next/next/no-img-element */
+import { useRouter } from 'next/router';
 import { useAuth } from '../utils/context/authContext';
 
 function Home() {
   const { user } = useAuth();
+  const router = useRouter();
 
   return (
-    <div
-      className="text-center d-flex flex-column justify-content-center align-content-center"
-      style={{
-        height: '90vh',
-        padding: '30px',
-        maxWidth: '400px',
-        margin: '0 auto',
-      }}
-    >
-      <h1>Hello {user.displayName}! </h1>
-      <p>Click the button below to logout!</p>
-      <button className="btn btn-danger btn-lg copy-btn" type="button" onClick={signOut}>
-        Sign Out
+    <div className="text-center m-2">
+      <img alt="My Manga Shelf Logo" src="/logo.png" width="300px" height="300px" />
+      <h3 className="mt-3">Welcome, {user.displayName}!</h3>
+      <button className="btn btn-blue" type="button" onClick={() => router.push('/series')}>
+        Click here to check out your shelf
       </button>
     </div>
   );

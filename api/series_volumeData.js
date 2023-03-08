@@ -86,7 +86,8 @@ const getOwnedVolumes = (seriesId) => new Promise((resolve, reject) => {
     .then((response) => response.json())
     .then((data) => {
       const ownedVolumes = Object.values(data).filter((item) => item.isOwned);
-      resolve(ownedVolumes);
+      const sortedVolumes = ownedVolumes.sort((a, b) => a.volume_name.localeCompare(b.volume_name, 'en', { numeric: true }));
+      resolve(sortedVolumes);
     })
     .catch(reject);
 });
@@ -102,7 +103,8 @@ const getWishlistVolumes = (seriesId) => new Promise((resolve, reject) => {
     .then((response) => response.json())
     .then((data) => {
       const wishlistVolumes = Object.values(data).filter((item) => item.isOwned === false);
-      resolve(wishlistVolumes);
+      const sortedVolumes = wishlistVolumes.sort((a, b) => a.volume_name.localeCompare(b.volume_name, 'en', { numeric: true }));
+      resolve(sortedVolumes);
     })
     .catch(reject);
 });

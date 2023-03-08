@@ -8,13 +8,6 @@ import { getAllSeries, searchSeries } from '../api/seriesData';
 import SeriesCard from '../components/cards/SeriesCard';
 import { useAuth } from '../utils/context/authContext';
 
-// const getSearchItems = (query, items) => {
-//   if (!query) {
-//     return items;
-//   }
-//   return items.filter((item) => (item.title.toLowerCase().includes(query)));
-// };
-
 export default function ViewSeries() {
   const { user } = useAuth();
   const [series, setSeries] = useState([]);
@@ -32,8 +25,6 @@ export default function ViewSeries() {
       .then(setQuery(''));
   };
 
-  // const searchItems = getSearchItems(query, series);
-
   useEffect(() => {
     getAllTheSeries();
   }, [user]);
@@ -46,14 +37,6 @@ export default function ViewSeries() {
           Add New Series
         </Button>
       </ButtonGroup><br />
-      {/* <ButtonGroup className="mt-1">
-        <Button className="btn-green">
-          My Collection
-        </Button>
-        <Button className="btn-red">
-          My Wishlist
-        </Button>
-      </ButtonGroup> */}
       <div className="my-2">
         <InputGroup>
           <Form.Control

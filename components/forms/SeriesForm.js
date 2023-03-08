@@ -38,14 +38,14 @@ export default function SeriesForm({ obj }) {
     if (obj.firebaseKey) {
       updateSeries(formInput)
         .then(() => {
-          router.back();
+          router.push('/series');
         });
     } else {
       const payload = { ...formInput, uid: user.uid };
       addSeries(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateSeries(patchPayload).then(() => {
-          router.back();
+          router.push('/series');
         });
       });
     }
