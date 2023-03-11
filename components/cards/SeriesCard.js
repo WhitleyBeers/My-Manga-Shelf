@@ -24,7 +24,7 @@ export default function SeriesCard({ seriesObj, onUpdate }) {
   }, []);
 
   return (
-    <Card style={{ width: '14rem', margin: '10px', color: 'black' }} className="py-3 px-1">
+    <Card className="py-3 px-1 series-card">
       <Card.Img src={seriesObj.image_url} alt={seriesObj.title} style={{ height: '250px', width: '175px' }} className="mx-auto" />
       <Card.Title>
         {seriesObj.title}

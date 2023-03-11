@@ -135,3 +135,9 @@ body {
   color: #79e5f3;
   font-style: italic;
 }
+
+.series-card {
+  width: 14rem;
+  margin: 10px;
+  color: black;
+}

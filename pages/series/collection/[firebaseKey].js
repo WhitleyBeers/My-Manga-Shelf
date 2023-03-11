@@ -35,11 +35,10 @@ export default function ViewCollectionSeries() {
           <div className="mx-1">
             <em>{seriesDetails.genre}</em>
           </div>
-          {seriesDetails.description}
           <p>
-            <em>{seriesDetails.status}</em>
+            {seriesDetails.description}
           </p>
-          <Button className="btn-green py-1 me-2" onClick={() => router.push(`/collection/series/edit/${firebaseKey}`)}>Edit</Button>
+          <Button className="btn-green py-1 me-2" onClick={() => router.push(`/series/edit/${firebaseKey}`)}>Edit</Button>
           <AddCollectionVolume obj={seriesDetails} />
         </div>
       </div>

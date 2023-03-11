@@ -28,7 +28,6 @@ export default function ViewWishlistSeries() {
     <>
       <div className="d-flex">
         <div className="mt-1 mx-auto">
-          {/* <div className="d-flex"> */}
           <img src={seriesDetails.image_url} alt={seriesDetails.title} style={{ height: '224px', width: '159px' }} />
           <h2>
             {seriesDetails.title} {seriesDetails.favorite ? '❤' : ''}
@@ -36,12 +35,8 @@ export default function ViewWishlistSeries() {
           <div className="mx-1">
             <em>{seriesDetails.genre}</em>
           </div>
-          {/* </div> */}
-          {seriesDetails.description}
-          <p>
-            <em>{seriesDetails.status}</em>
-          </p>
-          <Button className="btn-green me-1 py-1" onClick={() => router.push(`/collection/series/edit/${firebaseKey}`)}>Edit</Button>
+          <p>{seriesDetails.description}</p>
+          <Button className="btn-green me-1 py-1" onClick={() => router.push(`/series/edit/${firebaseKey}`)}>Edit</Button>
           <AddWishlistVolume obj={seriesDetails} />
         </div>
       </div>
