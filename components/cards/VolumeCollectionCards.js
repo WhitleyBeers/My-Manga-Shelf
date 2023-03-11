@@ -22,7 +22,7 @@ export default function VolumeCollectionCards({ volumeObj, onUpdate }) {
           {volumeObj.volume_name}
         </Col>
         <Col xs={3}>
-          <Button className="edit-link-btn" onClick={() => router.push(`/collection/volume/edit/${volumeObj.firebaseKey}`)}>
+          <Button className="edit-link-btn" onClick={() => router.push(`/volumes/edit/${volumeObj.firebaseKey}`)}>
             Edit
           </Button>
         </Col>

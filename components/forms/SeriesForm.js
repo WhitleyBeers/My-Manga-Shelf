@@ -38,7 +38,7 @@ export default function SeriesForm({ obj }) {
     if (obj.firebaseKey) {
       updateSeries(formInput)
         .then(() => {
-          router.push('/series');
+          router.back();
         });
     } else {
       const payload = { ...formInput, uid: user.uid };

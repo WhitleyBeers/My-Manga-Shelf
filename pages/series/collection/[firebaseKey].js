@@ -3,10 +3,10 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { viewSeriesCollection } from '../../api/mergeData';
-import { getOwnedVolumes } from '../../api/series_volumeData';
-import VolumeCollectionCards from '../../components/cards/VolumeCollectionCards';
-import AddCollectionVolume from '../../components/forms/AddCollectionVolume';
+import { viewSeriesCollection } from '../../../api/mergeData';
+import { getOwnedVolumes } from '../../../api/series_volumeData';
+import VolumeCollectionCards from '../../../components/cards/VolumeCollectionCards';
+import AddCollectionVolume from '../../../components/forms/AddCollectionVolume';
 
 export default function ViewCollectionSeries() {
   const router = useRouter();

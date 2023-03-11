@@ -3,10 +3,10 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { viewSeriesWishlist } from '../../api/mergeData';
-import { getWishlistVolumes } from '../../api/series_volumeData';
-import VolumeWishlistCards from '../../components/cards/VolumeWishlistCards';
-import AddWishlistVolume from '../../components/forms/AddWishlistVolume';
+import { viewSeriesWishlist } from '../../../api/mergeData';
+import { getWishlistVolumes } from '../../../api/series_volumeData';
+import VolumeWishlistCards from '../../../components/cards/VolumeWishlistCards';
+import AddWishlistVolume from '../../../components/forms/AddWishlistVolume';
 
 export default function ViewWishlistSeries() {
   const router = useRouter();
