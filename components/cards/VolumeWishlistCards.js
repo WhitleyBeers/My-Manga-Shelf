@@ -38,7 +38,7 @@ export default function VolumeWishlistCards({ volumeObj, onUpdate }) {
             <ButtonGroup>
               <Button
                 className="edit-link-btn"
-                onClick={() => router.push(`/wishlist/volume/edit/${volumeObj.firebaseKey}`)}
+                onClick={() => router.push(`/volumes/edit/${volumeObj.firebaseKey}`)}
               >
                 Edit
               </Button>

@@ -45,7 +45,7 @@ export default function SeriesForm({ obj }) {
       addSeries(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateSeries(patchPayload).then(() => {
-          router.back();
+          router.push('/series');
         });
       });
     }

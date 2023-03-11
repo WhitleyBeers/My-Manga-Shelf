@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import { signIn } from '../utils/auth';
 
@@ -12,10 +13,9 @@ function Signin() {
         margin: '0 auto',
       }}
     >
-      <h1>Hi there!</h1>
-      <p>Click the button below to login!</p>
-      <button type="button" className="btn btn-primary btn-lg copy-btn" onClick={signIn}>
-        Sign In
+      <img alt="My Manga Shelf Logo" src="/logo.png" width="300px" height="300px" />
+      <button type="button" className="btn btn-blue copy-btn mt-3" onClick={signIn}>
+        Click here to get started!
       </button>
     </div>
   );

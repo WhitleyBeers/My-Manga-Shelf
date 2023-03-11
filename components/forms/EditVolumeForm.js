@@ -10,9 +10,10 @@ const initialState = {
   firebaseKey: '',
   series_id: '',
   volume_name: '',
+  isOwned: false,
 };
 
-export default function CollectionVolumeForm({ obj }) {
+export default function EditVolumeForm({ obj }) {
   const [formInput, setFormInput] = useState(initialState);
   const [series, setSeries] = useState([]);
   const router = useRouter();
@@ -89,7 +90,7 @@ export default function CollectionVolumeForm({ obj }) {
   );
 }
 
-CollectionVolumeForm.propTypes = {
+EditVolumeForm.propTypes = {
   obj: PropTypes.shape({
     firebaseKey: PropTypes.string,
     series_id: PropTypes.string,
@@ -99,6 +100,6 @@ CollectionVolumeForm.propTypes = {
   }),
 };
 
-CollectionVolumeForm.defaultProps = {
+EditVolumeForm.defaultProps = {
   obj: initialState,
 };

@@ -6,8 +6,8 @@ import { deleteVolume, getOwnedVolumes, getWishlistVolumes } from './series_volu
 // GET Collection Series Volumes
 const viewSeriesCollection = (seriesFirebaseKey) => new Promise((resolve, reject) => {
   Promise.all([getSingleSeries(seriesFirebaseKey), getOwnedVolumes(seriesFirebaseKey)])
-    .then(([seriesObject, seriesArray]) => {
-      resolve({ ...seriesObject, volumes: seriesArray });
+    .then(([seriesObject, volumeArray]) => {
+      resolve({ ...seriesObject, volumes: volumeArray });
     }).catch((error) => reject(error));
 });
 
@@ -29,17 +29,6 @@ const deleteSeriesVolumes = (seriesId) => new Promise((resolve, reject) => {
     });
   }).catch((error) => reject(error));
 });
-
-// GET Series with Owned Volumes
-// const getOwnedSeries = (uid) => new Promise((resolve, reject) => {
-//   getAllSeries(uid).then((seriesArray) => {
-//     const volumes = seriesArray.map((singleSeries) => getOwnedVolumes(singleSeries.firebaseKey));
-//     volumes.filter((item) => item.)
-//   })
-//     .then((response) => response.json())
-//     .then((data) => resolve(Object.values(data)))
-//     .catch(reject);
-// });
 
 export {
   viewSeriesCollection, viewSeriesWishlist, deleteSeriesVolumes,

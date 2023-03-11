@@ -3,9 +3,10 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { viewSeriesWishlist } from '../../api/mergeData';
-import { getWishlistVolumes } from '../../api/series_volumeData';
-import VolumeWishlistCards from '../../components/cards/VolumeWishlistCards';
+import { viewSeriesWishlist } from '../../../api/mergeData';
+import { getWishlistVolumes } from '../../../api/series_volumeData';
+import VolumeWishlistCards from '../../../components/cards/VolumeWishlistCards';
+import AddWishlistVolume from '../../../components/forms/AddWishlistVolume';
 
 export default function ViewWishlistSeries() {
   const router = useRouter();
@@ -21,13 +22,12 @@ export default function ViewWishlistSeries() {
   useEffect(() => {
     viewSeriesWishlist(firebaseKey).then(setSeriesDetails);
     getVolumeCards();
-  }, [firebaseKey]);
+  }, [firebaseKey, volumes]);
 
   return (
     <>
       <div className="d-flex">
         <div className="mt-1 mx-auto">
-          {/* <div className="d-flex"> */}
           <img src={seriesDetails.image_url} alt={seriesDetails.title} style={{ height: '224px', width: '159px' }} />
           <h2>
             {seriesDetails.title} {seriesDetails.favorite ? '❤' : ''}
@@ -35,13 +35,9 @@ export default function ViewWishlistSeries() {
           <div className="mx-1">
             <em>{seriesDetails.genre}</em>
           </div>
-          {/* </div> */}
-          {seriesDetails.description}
-          <p>
-            <em>{seriesDetails.status}</em>
-          </p>
-          <Button className="btn-green me-1 py-1" onClick={() => router.push(`/collection/series/edit/${firebaseKey}`)}>Edit</Button>
-          <Button className="btn-blue ms-1 py-1" onClick={() => router.push('/wishlist/volume/new')}>Add a Volume</Button>
+          <p>{seriesDetails.description}</p>
+          <Button className="btn-green me-1 py-1" onClick={() => router.push(`/series/edit/${firebaseKey}`)}>Edit</Button>
+          <AddWishlistVolume obj={seriesDetails} />
         </div>
       </div>
       <hr />
