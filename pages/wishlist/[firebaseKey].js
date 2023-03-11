@@ -6,6 +6,7 @@ import { Button } from 'react-bootstrap';
 import { viewSeriesWishlist } from '../../api/mergeData';
 import { getWishlistVolumes } from '../../api/series_volumeData';
 import VolumeWishlistCards from '../../components/cards/VolumeWishlistCards';
+import AddWishlistVolume from '../../components/forms/AddWishlistVolume';
 
 export default function ViewWishlistSeries() {
   const router = useRouter();
@@ -21,7 +22,7 @@ export default function ViewWishlistSeries() {
   useEffect(() => {
     viewSeriesWishlist(firebaseKey).then(setSeriesDetails);
     getVolumeCards();
-  }, [firebaseKey]);
+  }, [firebaseKey, volumes]);
 
   return (
     <>
@@ -41,7 +42,7 @@ export default function ViewWishlistSeries() {
             <em>{seriesDetails.status}</em>
           </p>
           <Button className="btn-green me-1 py-1" onClick={() => router.push(`/collection/series/edit/${firebaseKey}`)}>Edit</Button>
-          <Button className="btn-blue ms-1 py-1" onClick={() => router.push('/wishlist/volume/new')}>Add a Volume</Button>
+          <AddWishlistVolume obj={seriesDetails} />
         </div>
       </div>
       <hr />
