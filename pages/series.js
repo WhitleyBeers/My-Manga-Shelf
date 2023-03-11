@@ -34,7 +34,10 @@ export default function ViewSeries() {
       <h1 className="my-3">My Series</h1>
       <ButtonGroup>
         <Button className="btn-blue" onClick={() => router.push('/series/newSeries')}>
-          Add New Series
+          Add A Series
+        </Button>
+        <Button className="btn-green" onClick={() => router.push('/volumes/new')}>
+          Add A Volume
         </Button>
       </ButtonGroup><br />
       <div className="my-2">

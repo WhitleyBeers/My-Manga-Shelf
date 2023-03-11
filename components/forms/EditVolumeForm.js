@@ -38,7 +38,7 @@ export default function EditVolumeForm({ obj }) {
       updateVolume(formInput)
         .then(() => router.back());
     } else {
-      const payload = { ...formInput, uid: user.uid, isOwned: true };
+      const payload = { ...formInput, uid: user.uid };
       addVolume(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateVolume(patchPayload).then(() => router.back());
@@ -82,6 +82,21 @@ export default function EditVolumeForm({ obj }) {
           ))}
         </Form.Select>
       </FloatingLabel>
+
+      <Form.Check
+        className="text-white"
+        type="switch"
+        id="isOwned"
+        name="isOwned"
+        label="Do you have this volume?"
+        checked={formInput.isOwned}
+        onChange={(e) => {
+          setFormInput((prevState) => ({
+            ...prevState,
+            isOwned: e.target.checked,
+          }));
+        }}
+      />
 
       <Button type="submit" className="btn-blue me-1">{obj.firebaseKey ? 'Update' : 'Add'} Volume</Button>
       <Button onClick={() => router.back()} className="btn-red ms-1">Cancel</Button>
