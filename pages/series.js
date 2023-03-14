@@ -44,7 +44,7 @@ export default function ViewSeries() {
         <InputGroup>
           <Form.Control
             type="text"
-            placeholder="Search the database..."
+            placeholder="Search..."
             value={query}
             onChange={(e) => setQuery(e.target.value.toLowerCase())}
             required

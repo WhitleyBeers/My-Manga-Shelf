@@ -28,4 +28,13 @@ const getMangaById = (malId) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-export { getMangaInformation, getMangaById };
+const getMangaRecommendation = (id) => new Promise((resolve, reject) => {
+  fetch(`${dbUrl}/manga/${id}/recommendations`, {
+    method: 'GET',
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data.data)))
+    .catch(reject);
+});
+
+export { getMangaInformation, getMangaById, getMangaRecommendation };
