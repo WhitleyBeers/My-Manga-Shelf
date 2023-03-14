@@ -1,8 +1,14 @@
+import Head from 'next/head';
 import React from 'react';
 import SeriesForm from '../../components/forms/SeriesForm';
 
 export default function NewSeries() {
   return (
-    <SeriesForm />
+    <>
+      <Head>
+        <title>Add A Series</title>
+      </Head>
+      <SeriesForm />
+    </>
   );
 }

@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import {
@@ -31,6 +32,9 @@ export default function ViewSeries() {
 
   return (
     <div className="text-center">
+      <Head>
+        <title>My Series</title>
+      </Head>
       <h1 className="my-3">My Series</h1>
       <ButtonGroup>
         <Button className="btn-blue" onClick={() => router.push('/series/newSeries')}>

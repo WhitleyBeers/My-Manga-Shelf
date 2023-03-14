@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import {
   Button, Carousel, CarouselItem, FloatingLabel, Form,
@@ -34,6 +35,9 @@ export default function RecommendationView() {
 
   return (
     <div className="text-center m-4">
+      <Head>
+        <title>Get Recommendations</title>
+      </Head>
       <h6>Choose a series and swipe left or right for similar manga!</h6>
       <Form onSubmit={handleSubmit} className="text-black">
         <FloatingLabel label="Series">

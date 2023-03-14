@@ -30,11 +30,11 @@ export default function NavBar() {
             <Link passHref href="/series">
               <Nav.Link>Series</Nav.Link>
             </Link>
-            <Link passHref href="/profile">
-              <Nav.Link>Profile</Nav.Link>
-            </Link>
             <Link passHref href="/recommendation">
               <Nav.Link>Recommendations</Nav.Link>
+            </Link>
+            <Link passHref href="/profile">
+              <Nav.Link>Profile</Nav.Link>
             </Link>
             <Link passHref href="/">
               <Button type="button" className="btn-red" onClick={signOut}>Sign Out</Button>

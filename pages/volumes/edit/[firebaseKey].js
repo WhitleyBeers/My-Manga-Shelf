@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { getSingleVolume } from '../../../api/series_volumeData';
@@ -13,6 +14,11 @@ export default function EditVolume() {
   }, [firebaseKey]);
 
   return (
-    <div><EditVolumeForm obj={editItem} /></div>
+    <div>
+      <Head>
+        <title>Edit {editItem.volume_name}</title>
+      </Head>
+      <EditVolumeForm obj={editItem} />
+    </div>
   );
 }

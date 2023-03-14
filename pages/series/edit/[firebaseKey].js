@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
 import { getSingleSeries } from '../../../api/seriesData';
@@ -13,6 +14,11 @@ export default function EditCollectionSeries() {
   }, [firebaseKey]);
 
   return (
-    <SeriesForm obj={editItem} />
+    <>
+      <Head>
+        <title>Editing {editItem.title}</title>
+      </Head>
+      <SeriesForm obj={editItem} />
+    </>
   );
 }
