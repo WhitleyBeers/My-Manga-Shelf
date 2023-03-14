@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useAuth } from '../utils/context/authContext';
 
@@ -8,6 +9,9 @@ function Home() {
 
   return (
     <div className="text-center m-2">
+      <Head>
+        <title>My Manga Shelf</title>
+      </Head>
       <img alt="My Manga Shelf Logo" src="/logo.png" width="300px" height="300px" />
       <h3 className="mt-3">Welcome, {user.displayName}!</h3>
       <button className="btn btn-blue" type="button" onClick={() => router.push('/series')}>

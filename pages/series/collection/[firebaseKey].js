@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/exhaustive-deps */
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
@@ -26,6 +27,9 @@ export default function ViewCollectionSeries() {
 
   return (
     <>
+      <Head>
+        <title>Viewing {seriesDetails.title}</title>
+      </Head>
       <div className="d-flex">
         <div className="mt-1 mx-auto">
           <img src={seriesDetails.image_url} alt={seriesDetails.title} style={{ height: '224px', width: '159px' }} />

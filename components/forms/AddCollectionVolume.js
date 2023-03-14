@@ -39,7 +39,7 @@ export default function AddCollectionVolume({ obj }) {
   return (
     <>
       <Button className="btn-blue py-1" onClick={handleOpen}>
-        Add a Volume
+        Quick Add Volume
       </Button>
       <Modal show={show} onHide={handleClose} className="text-black">
         <Modal.Title className="text-center mt-1">Add a Volume to {obj.title}</Modal.Title>

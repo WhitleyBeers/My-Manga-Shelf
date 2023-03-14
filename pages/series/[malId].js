@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { getMangaById } from '../../api/extData';
@@ -15,6 +16,11 @@ export default function AddSearchSeries() {
   }, []);
 
   return (
-    <SeriesForm obj={series} />
+    <>
+      <Head>
+        <title>Add {series.title}</title>
+      </Head>
+      <SeriesForm obj={series} />
+    </>
   );
 }

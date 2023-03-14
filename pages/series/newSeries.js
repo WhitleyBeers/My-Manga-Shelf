@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Head from 'next/head';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { Button, Form, InputGroup } from 'react-bootstrap';
@@ -18,6 +19,9 @@ export default function NewSeriesView() {
 
   return (
     <div className="text-center m-4">
+      <Head>
+        <title>Add A Series</title>
+      </Head>
       <InputGroup>
         <Form.Control
           type="text"
