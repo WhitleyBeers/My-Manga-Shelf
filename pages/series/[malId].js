@@ -14,10 +14,6 @@ export default function AddSearchSeries() {
     getMangaById(malId).then(setSeries);
   }, []);
 
-  useEffect(() => {
-    if (series.title) console.warn(series);
-  });
-
   return (
     <SeriesForm obj={series} />
   );
