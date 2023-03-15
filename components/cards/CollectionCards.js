@@ -21,7 +21,7 @@ export default function CollectionCards({ obj }) {
         ))}
       </ListGroup>
       <Card.Footer>
-        <Button className="add-link-btn p-0" onClick={() => router.push(`/series/${obj.firebaseKey}`)}>Go to series page</Button>
+        <Button className="add-link-btn p-0" onClick={() => router.push(`/series/details/${obj.firebaseKey}`)}>Go to series page</Button>
       </Card.Footer>
     </Card>
   );
