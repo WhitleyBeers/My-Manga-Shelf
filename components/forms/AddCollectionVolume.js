@@ -11,7 +11,7 @@ const initialState = {
   isOwned: false,
 };
 
-export default function AddCollectionVolume({ obj, onUpdate }) {
+export default function AddVolumeModal({ obj, onUpdate }) {
   const [formInput, setFormInput] = useState(initialState);
   const [show, setShow] = useState(false);
   const { user } = useAuth();
@@ -78,7 +78,7 @@ export default function AddCollectionVolume({ obj, onUpdate }) {
   );
 }
 
-AddCollectionVolume.propTypes = {
+AddVolumeModal.propTypes = {
   obj: PropTypes.shape({
     firebaseKey: PropTypes.string,
     title: PropTypes.string,

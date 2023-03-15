@@ -8,7 +8,7 @@ import { getSingleSeries } from '../../../api/seriesData';
 import { getOwnedVolumes, getWishlistVolumes } from '../../../api/series_volumeData';
 import VolumeCollectionCards from '../../../components/cards/VolumeCollectionCards';
 import VolumeWishlistCards from '../../../components/cards/VolumeWishlistCards';
-import AddCollectionVolume from '../../../components/forms/AddCollectionVolume';
+import AddVolumeModal from '../../../components/forms/AddCollectionVolume';
 
 export default function SeriesDetailsView() {
   const router = useRouter();
@@ -46,7 +46,7 @@ export default function SeriesDetailsView() {
             {seriesDetails.description}
           </p>
           <Button className="btn-green py-1 me-2" onClick={() => router.push(`/series/edit/${firebaseKey}`)}>Edit Series Info</Button>
-          <AddCollectionVolume obj={seriesDetails} onUpdate={getVolumeCards} />
+          <AddVolumeModal obj={seriesDetails} onUpdate={getVolumeCards} />
         </div>
       </div>
       <div className="my-2 mb-4">
