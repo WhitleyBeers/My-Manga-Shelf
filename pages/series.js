@@ -44,7 +44,7 @@ export default function ViewSeries() {
           Add A Volume
         </Button>
       </ButtonGroup><br />
-      <div className="my-2">
+      <div className="my-2 d-flex">
         <InputGroup>
           <Form.Control
             type="text"
@@ -53,8 +53,13 @@ export default function ViewSeries() {
             onChange={(e) => setQuery(e.target.value.toLowerCase())}
             required
           />
-          <Button className="search-manga" onClick={searchItems}>&#x1F50E;&#xFE0E;</Button>
+          <Button className="search-manga" onClick={searchItems}>
+            &#x1F50E;&#xFE0E;
+          </Button>
         </InputGroup>
+        <Button className="btn-clear" onClick={getAllTheSeries}>
+          &#10006;
+        </Button>
       </div>
       <div className="my-2 d-flex justify-content-center flex-wrap">
         {series.map((singleSeries) => (

@@ -40,11 +40,8 @@ export default function SeriesCard({ seriesObj, onUpdate }) {
           Options
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          <Dropdown.Item href={`/series/collection/${seriesObj.firebaseKey}`}>
-            Volumes in your Collection
-          </Dropdown.Item>
-          <Dropdown.Item href={`/series/wishlist/${seriesObj.firebaseKey}`}>
-            Volumes in your Wishlist
+          <Dropdown.Item href={`/series/details/${seriesObj.firebaseKey}`}>
+            View Details
           </Dropdown.Item>
           <Dropdown.Item href={`/series/edit/${seriesObj.firebaseKey}`}>
             Edit Series Info

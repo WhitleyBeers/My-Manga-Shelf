@@ -8,9 +8,10 @@ import { useAuth } from '../../utils/context/authContext';
 
 const initialState = {
   volume_name: '',
+  isOwned: false,
 };
 
-export default function AddCollectionVolume({ obj }) {
+export default function AddVolumeModal({ obj, onUpdate }) {
   const [formInput, setFormInput] = useState(initialState);
   const [show, setShow] = useState(false);
   const { user } = useAuth();
@@ -28,11 +29,13 @@ export default function AddCollectionVolume({ obj }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const payload = {
-      ...formInput, series_id: obj.firebaseKey, uid: user.uid, isOwned: true,
+      ...formInput, series_id: obj.firebaseKey, uid: user.uid,
     };
     addVolume(payload).then(({ name }) => {
       const patchPayload = { firebaseKey: name };
-      updateVolume(patchPayload).then(handleClose);
+      updateVolume(patchPayload)
+        .then(handleClose)
+        .then(onUpdate);
     });
   };
 
@@ -48,6 +51,20 @@ export default function AddCollectionVolume({ obj }) {
             <FloatingLabel label="Volume Name" className="mb-3">
               <Form.Control type="text" name="volume_name" value={formInput.volume_name} onChange={handleChange} required />
             </FloatingLabel>
+            <Form.Check
+              type="switch"
+              className="mb-3"
+              id="isOwned"
+              name="isOwned"
+              label="Do you have this volume?"
+              checked={formInput.isOwned}
+              onChange={(e) => {
+                setFormInput((prevState) => ({
+                  ...prevState,
+                  isOwned: e.target.checked,
+                }));
+              }}
+            />
             <Button type="submit" className="btn-blue me-1">
               Add Volume
             </Button>
@@ -61,9 +78,10 @@ export default function AddCollectionVolume({ obj }) {
   );
 }
 
-AddCollectionVolume.propTypes = {
+AddVolumeModal.propTypes = {
   obj: PropTypes.shape({
     firebaseKey: PropTypes.string,
     title: PropTypes.string,
   }).isRequired,
+  onUpdate: PropTypes.func.isRequired,
 };

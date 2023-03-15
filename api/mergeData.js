@@ -1,5 +1,5 @@
 import {
-  deleteSeries, getSeriesVolumes, getSingleSeries,
+  deleteSeries, getAllSeries, getSeriesVolumes, getSingleSeries,
 } from './seriesData';
 import { deleteVolume, getOwnedVolumes, getWishlistVolumes } from './series_volumeData';
 
@@ -30,6 +30,26 @@ const deleteSeriesVolumes = (seriesId) => new Promise((resolve, reject) => {
   }).catch((error) => reject(error));
 });
 
+const getCollectionQuickview = (uid) => new Promise((resolve, reject) => {
+  getAllSeries(uid).then((seriesArray) => {
+    const filteredSeries = seriesArray.map((item) => viewSeriesCollection(item.firebaseKey));
+    Promise.all(filteredSeries).then((filteredArray) => {
+      const blob = filteredArray.filter((item) => item.volumes.length > 0);
+      resolve(blob);
+    });
+  }).catch((error) => reject(error));
+});
+
+const getWishlistQuickview = (uid) => new Promise((resolve, reject) => {
+  getAllSeries(uid).then((seriesArray) => {
+    const filteredSeries = seriesArray.map((item) => viewSeriesWishlist(item.firebaseKey));
+    Promise.all(filteredSeries).then((filteredArray) => {
+      const blob = filteredArray.filter((item) => item.volumes.length > 0);
+      resolve(blob);
+    });
+  }).catch((error) => reject(error));
+});
+
 export {
-  viewSeriesCollection, viewSeriesWishlist, deleteSeriesVolumes,
+  viewSeriesCollection, viewSeriesWishlist, deleteSeriesVolumes, getCollectionQuickview, getWishlistQuickview,
 };

@@ -114,6 +114,18 @@ body {
   border-radius: 0 5px 5px;
 }
 
+.btn-clear, .btn-clear:active:focus {
+  background-color: transparent;
+  border-color: transparent;
+  color: #ff6a79;
+}
+
+.btn-clear:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: #ffffff;
+}
+
 .card-dropdown {
   background-color: transparent;
   border-radius: 2;
@@ -146,4 +158,9 @@ body {
   background-color: transparent;
   color: white;
   border: none;
+}
+
+.list-group-item {
+  background-color: transparent;
+  color: white;
 }
