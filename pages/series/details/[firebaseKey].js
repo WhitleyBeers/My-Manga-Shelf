@@ -39,14 +39,14 @@ export default function SeriesDetailsView() {
           <h2>
             {seriesDetails.title} {seriesDetails.favorite ? '❤' : ''}
           </h2>
-          <div className="mx-1">
+          <div>
             <em>{seriesDetails.genre}</em>
           </div>
           <p className="mb-1">
             {seriesDetails.description}
           </p>
           <Button className="btn-green py-1 me-2" onClick={() => router.push(`/series/edit/${firebaseKey}`)}>Edit Series Info</Button>
-          <AddCollectionVolume obj={seriesDetails} />
+          <AddCollectionVolume obj={seriesDetails} onUpdate={getVolumeCards} />
         </div>
       </div>
       <div className="my-2 mb-4">
