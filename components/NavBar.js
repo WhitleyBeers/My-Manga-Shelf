@@ -27,8 +27,14 @@ export default function NavBar() {
             </Navbar.Brand>
           </Link>
           <Nav className="mx-2 text-center" onClick={handleClose}>
+            <Link passHref href="/collection">
+              <Nav.Link>Collection</Nav.Link>
+            </Link>
+            <Link passHref href="/wishlist">
+              <Nav.Link>Wishlist</Nav.Link>
+            </Link>
             <Link passHref href="/series">
-              <Nav.Link>Series</Nav.Link>
+              <Nav.Link>All Series</Nav.Link>
             </Link>
             <Link passHref href="/recommendation">
               <Nav.Link>Recommendations</Nav.Link>
