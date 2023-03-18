@@ -35,6 +35,7 @@ export default function AddVolumeModal({ obj, onUpdate }) {
       const patchPayload = { firebaseKey: name };
       updateVolume(patchPayload)
         .then(handleClose)
+        .then(setFormInput(initialState))
         .then(onUpdate);
     });
   };

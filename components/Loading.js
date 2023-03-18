@@ -1,4 +1,5 @@
 import React from 'react';
+import { BarLoader } from 'react-spinners';
 
 export default function Loading() {
   return (
@@ -12,7 +13,7 @@ export default function Loading() {
         }}
         role="status"
       >
-        <span className="visually-hidden">Loading...</span>
+        <BarLoader color="#073B4C" />
       </div>
     </div>
   );
