@@ -12,11 +12,37 @@ function Home() {
       <Head>
         <title>My Manga Shelf</title>
       </Head>
-      <img alt="My Manga Shelf Logo" src="/logo.png" width="300px" height="300px" />
-      <h3 className="mt-3">Welcome, {user.displayName}!</h3>
-      <button className="btn btn-blue" type="button" onClick={() => router.push('/series')}>
-        Click here to check out your shelf
-      </button>
+      <h1 className="mt-2 mb-3">Welcome, {user.displayName}!</h1>
+      <div className="mb-3">
+        <button className="btn btn-home p-3 me-2" type="button" onClick={() => router.push('/collection')}>
+          <img src="/Shelf.png" alt="shelf logo" />
+          <h4 className="mt-2">Collection</h4>
+        </button>
+        <button className="btn btn-home p-3 ms-2" type="button" onClick={() => router.push('/wishlist')}>
+          <img src="/Wishlist.png" alt="wishlist logo" />
+          <h4 className="mt-2">Wishlist</h4>
+        </button>
+      </div>
+      <div className="mt-3 mb-3">
+        <button className="btn btn-home p-3 me-2" type="button" onClick={() => router.push('/series')}>
+          <img src="/allseries.png" alt="all series logo" style={{ height: '100px', width: '100px' }} />
+          <h4 className="mt-2">All Series</h4>
+        </button>
+        <button className="btn btn-home p-3 ms-2" type="button" onClick={() => router.push('/series/newSeries')}>
+          <img src="/add.png" alt="new series logo" style={{ height: '100px', width: '100px' }} />
+          <h4 className="mt-2">Add Series</h4>
+        </button>
+      </div>
+      <div className="mt-3 mb-3">
+        <button className="btn btn-home p-3 me-2" type="button" onClick={() => router.push('/recommendation')}>
+          <img src="/recommend.png" alt="recommendations logo" />
+          <h4 className="mt-2">Similar Manga</h4>
+        </button>
+        <button className="btn btn-home p-3 ms-2" type="button" onClick={() => router.push('/profile')}>
+          <img src="/profile.png" alt="profile logo" />
+          <h4 className="mt-2">Profile</h4>
+        </button>
+      </div>
     </div>
   );
 }
