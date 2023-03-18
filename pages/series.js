@@ -14,6 +14,7 @@ export default function ViewSeries() {
   const [series, setSeries] = useState([]);
   const [query, setQuery] = useState('');
   const router = useRouter();
+  const controller = new AbortController();
 
   const getAllTheSeries = () => {
     getAllSeries(user.uid).then(setSeries);
@@ -28,6 +29,7 @@ export default function ViewSeries() {
 
   useEffect(() => {
     getAllTheSeries();
+    return () => controller.abort();
   }, [user]);
 
   return (

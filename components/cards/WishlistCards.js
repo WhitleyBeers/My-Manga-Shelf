@@ -14,7 +14,7 @@ export default function WishlistCards({ obj }) {
 
   return (
     <Card className="my-2 pt-3 pb-0 px-1 volume-card">
-      <Card.Title className="px-3">{obj.title}</Card.Title>
+      <Card.Title className="px-3 quickview-card">{obj.title}</Card.Title>
       <ListGroup variant="flush">
         {volumes.map((volume) => (
           <ListGroup.Item key={volume.firebaseKey} className="list-group-flush">{volume.volume_name}</ListGroup.Item>
