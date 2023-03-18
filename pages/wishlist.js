@@ -7,6 +7,7 @@ import { useAuth } from '../utils/context/authContext';
 export default function FullWishlistView() {
   const { user } = useAuth();
   const [wishlistItems, setWishlistItems] = useState([]);
+  const controller = new AbortController();
 
   const wishlistView = () => {
     getWishlistQuickview(user.uid)
@@ -15,6 +16,7 @@ export default function FullWishlistView() {
 
   useEffect(() => {
     wishlistView();
+    return () => controller.abort();
   });
 
   return (
@@ -23,9 +25,11 @@ export default function FullWishlistView() {
         <title>My Wishlist</title>
       </Head>
       <h1 className="my-3">My Wishlist</h1>
-      {wishlistItems.map((item) => (
-        <WishlistCards obj={item} key={item.firebaseKey} />
-      ))}
+      {wishlistItems.length > 0 ? (
+        wishlistItems.map((item) => (
+          <WishlistCards obj={item} key={item.firebaseKey} />
+        ))
+      ) : <h4><em>There&apos;s nothing here!</em></h4>}
     </div>
   );
 }

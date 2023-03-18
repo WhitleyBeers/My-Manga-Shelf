@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Card, ListGroup } from 'react-bootstrap';
+import {
+  Accordion, Button, ListGroup,
+} from 'react-bootstrap';
 import { useRouter } from 'next/router';
 import { getOwnedVolumes } from '../../api/series_volumeData';
 
@@ -13,17 +15,21 @@ export default function CollectionCards({ obj }) {
   }, [obj]);
 
   return (
-    <Card className="my-2 pt-3 pb-0 px-1 volume-card">
-      <Card.Title className="px-3">{obj.title}</Card.Title>
-      <ListGroup variant="flush">
-        {volumes.map((volume) => (
-          <ListGroup.Item key={volume.firebaseKey} className="list-group-flush">{volume.volume_name}</ListGroup.Item>
-        ))}
-      </ListGroup>
-      <Card.Footer>
-        <Button className="add-link-btn p-0" onClick={() => router.push(`/series/details/${obj.firebaseKey}`)}>Go to series page</Button>
-      </Card.Footer>
-    </Card>
+    <>
+      <Accordion className="my-3" flush>
+        <Accordion.Header className="px-3 quickview-card">{obj.title}</Accordion.Header>
+        <Accordion.Body>
+          <ListGroup variant="flush">
+            {volumes.map((volume) => (
+              <ListGroup.Item key={volume.firebaseKey} className="list-group-flush">{volume.volume_name}</ListGroup.Item>
+            ))}
+            <ListGroup.Item className="list-group-flush">
+              <Button className="add-link-btn p-0" onClick={() => router.push(`/series/details/${obj.firebaseKey}`)}>Go to series page</Button>
+            </ListGroup.Item>
+          </ListGroup>
+        </Accordion.Body>
+      </Accordion>
+    </>
   );
 }
 

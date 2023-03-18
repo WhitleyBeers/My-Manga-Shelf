@@ -52,7 +52,7 @@ export default function RecommendationView() {
             <option value="">Choose a Series</option>
             {series.map((singleSeries) => (
               <option
-                key={singleSeries.mal_id}
+                key={singleSeries.firebaseKey}
                 value={singleSeries.mal_id}
               >{singleSeries.title}
               </option>

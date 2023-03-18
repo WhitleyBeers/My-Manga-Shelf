@@ -36,6 +36,9 @@ export default function NavBar() {
             <Link passHref href="/series">
               <Nav.Link>All Series</Nav.Link>
             </Link>
+            <Link passHref href="/series/newSeries">
+              <Nav.Link>Add New Series</Nav.Link>
+            </Link>
             <Link passHref href="/recommendation">
               <Nav.Link>Recommendations</Nav.Link>
             </Link>

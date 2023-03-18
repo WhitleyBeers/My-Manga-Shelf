@@ -1,11 +1,14 @@
 import { clientCredentials } from '../utils/client';
 
+const controller = new AbortController();
+const { signal } = controller;
 const dbUrl = clientCredentials.databaseURL;
 
 // GET All Series by UID
 const getAllSeries = (uid) => new Promise((resolve, reject) => {
   fetch(`${dbUrl}/series.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
+    signal,
     headers: {
       'Content-Type': 'application/json',
     },
@@ -25,6 +28,7 @@ const getAllSeries = (uid) => new Promise((resolve, reject) => {
 const getSingleSeries = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${dbUrl}/series/${firebaseKey}.json`, {
     method: 'GET',
+    signal,
     headers: {
       'Content-Type': 'application/json',
     },
@@ -79,6 +83,7 @@ const deleteSeries = (firebaseKey) => new Promise((resolve, reject) => {
 const getSeriesVolumes = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${dbUrl}/series_volume.json?orderBy="series_id"&equalTo="${firebaseKey}"`, {
     method: 'GET',
+    signal,
     headers: {
       'Content-Type': 'application/json',
     },
@@ -92,6 +97,7 @@ const getSeriesVolumes = (firebaseKey) => new Promise((resolve, reject) => {
 const searchSeries = (query, uid) => new Promise((resolve, reject) => {
   fetch(`${dbUrl}/series.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
+    signal,
     headers: {
       'Content-Type': 'application/json',
     },

@@ -7,6 +7,7 @@ import { useAuth } from '../utils/context/authContext';
 export default function FullCollectionView() {
   const { user } = useAuth();
   const [collectionItems, setCollectionItems] = useState([]);
+  const controller = new AbortController();
 
   const collectionView = () => {
     getCollectionQuickview(user.uid)
@@ -15,6 +16,7 @@ export default function FullCollectionView() {
 
   useEffect(() => {
     collectionView();
+    return () => controller.abort();
   });
 
   return (
@@ -23,9 +25,11 @@ export default function FullCollectionView() {
         <title>My Collection</title>
       </Head>
       <h1 className="my-3">My Collection</h1>
-      {collectionItems.map((item) => (
-        <CollectionCards obj={item} key={item.firebaseKey} />
-      ))}
+      {collectionItems.length > 0 ? (
+        collectionItems.map((item) => (
+          <CollectionCards obj={item} key={item.firebaseKey} />
+        ))
+      ) : <h4><em>There&apos;s nothing here!</em></h4>}
     </div>
   );
 }

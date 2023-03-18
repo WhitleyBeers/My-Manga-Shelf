@@ -14,8 +14,8 @@ function Signin() {
       }}
     >
       <img alt="My Manga Shelf Logo" src="/logo.png" width="300px" height="300px" />
-      <button type="button" className="btn btn-blue copy-btn mt-3" onClick={signIn}>
-        Click here to get started!
+      <button type="button" className="btn btn-lg btn-blue copy-btn mt-5" onClick={signIn}>
+        Get started here
       </button>
     </div>
   );

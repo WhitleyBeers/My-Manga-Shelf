@@ -1,11 +1,14 @@
 import { clientCredentials } from '../utils/client';
 
 const dbUrl = clientCredentials.databaseURL;
+const controller = new AbortController();
+const { signal } = controller;
 
 // GET All Series Volumes by UID
 const getAllVolumes = (uid) => new Promise((resolve, reject) => {
   fetch(`${dbUrl}/series_volume.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
+    signal,
     headers: {
       'Content-Type': 'application/json',
     },
@@ -25,6 +28,7 @@ const getAllVolumes = (uid) => new Promise((resolve, reject) => {
 const getSingleVolume = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${dbUrl}/series_volume/${firebaseKey}.json`, {
     method: 'GET',
+    signal,
     headers: {
       'Content-Type': 'application/json',
     },
@@ -79,6 +83,7 @@ const deleteVolume = (firebaseKey) => new Promise((resolve, reject) => {
 const getOwnedVolumes = (seriesId) => new Promise((resolve, reject) => {
   fetch(`${dbUrl}/series_volume.json?orderBy="series_id"&equalTo="${seriesId}"`, {
     method: 'GET',
+    signal,
     headers: {
       'Content-Type': 'application/json',
     },
@@ -96,6 +101,7 @@ const getOwnedVolumes = (seriesId) => new Promise((resolve, reject) => {
 const getWishlistVolumes = (seriesId) => new Promise((resolve, reject) => {
   fetch(`${dbUrl}/series_volume.json?orderBy="series_id"&equalTo="${seriesId}"`, {
     method: 'GET',
+    signal,
     headers: {
       'Content-Type': 'application/json',
     },

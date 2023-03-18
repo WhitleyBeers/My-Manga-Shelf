@@ -8,7 +8,7 @@ import { getSingleSeries } from '../../../api/seriesData';
 import { getOwnedVolumes, getWishlistVolumes } from '../../../api/series_volumeData';
 import VolumeCollectionCards from '../../../components/cards/VolumeCollectionCards';
 import VolumeWishlistCards from '../../../components/cards/VolumeWishlistCards';
-import AddVolumeModal from '../../../components/forms/AddCollectionVolume';
+import AddVolumeModal from '../../../components/forms/AddVolumeModal';
 
 export default function SeriesDetailsView() {
   const router = useRouter();

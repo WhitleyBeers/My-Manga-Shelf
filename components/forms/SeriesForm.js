@@ -14,6 +14,7 @@ const initialState = {
   genre: '',
   favorite: false,
   status: '',
+  firebaseKey: '',
 };
 
 export default function SeriesForm({ obj }) {
