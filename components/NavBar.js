@@ -17,6 +17,11 @@ export default function NavBar() {
     <Navbar collapseOnSelect expand="false" variant="dark" className="navbar">
       <Container className="mx-0">
         <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={handleShow} />
+        <Link passHref href="/">
+          <Navbar.Brand className="mb-0">
+            <img alt="Navbar logo" src="/navbarlogo.png" />
+          </Navbar.Brand>
+        </Link>
         <Navbar.Offcanvas show={show} className="offcanvas" onClick={handleClose}>
           <Offcanvas.Header>
             <CloseButton onClick={handleClose} variant="white" />
