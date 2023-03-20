@@ -30,7 +30,10 @@ export default function RecommendationView() {
   };
 
   useEffect(() => {
-    getAllSeries(user.uid).then(setSeries);
+    getAllSeries(user.uid).then((seriesArr) => {
+      const items = seriesArr.filter((singleSeries) => singleSeries.mal_id);
+      setSeries(items);
+    });
   }, [user]);
 
   return (
@@ -69,6 +72,7 @@ export default function RecommendationView() {
           </CarouselItem>
         ))}
       </Carousel>
+      <p><em>Note: You can only get recommendations on manga that were populated from the database, not manga that were manually entered.</em></p>
     </div>
   );
 }
