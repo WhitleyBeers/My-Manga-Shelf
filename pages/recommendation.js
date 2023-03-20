@@ -30,7 +30,10 @@ export default function RecommendationView() {
   };
 
   useEffect(() => {
-    getAllSeries(user.uid).then(setSeries);
+    getAllSeries(user.uid).then((seriesArr) => {
+      const items = seriesArr.filter((singleSeries) => singleSeries.mal_id);
+      setSeries(items);
+    });
   }, [user]);
 
   return (
