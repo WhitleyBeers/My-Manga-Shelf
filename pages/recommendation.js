@@ -72,6 +72,7 @@ export default function RecommendationView() {
           </CarouselItem>
         ))}
       </Carousel>
+      <p><em>Note: You can only get recommendations on manga that were populated from the database, not manga that were manually entered.</em></p>
     </div>
   );
 }
