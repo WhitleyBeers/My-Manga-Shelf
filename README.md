@@ -4,16 +4,10 @@ My Manga Shelf is a mobile-first application that allows a user to keep track of
 
 [View App](https://my-manga-shelf.netlify.app/)
 
-## Get Started <!-- OPTIONAL, but doesn't hurt -->
-```
-$ git clone git@github.com:WhitleyBeers/My-Manga-Shelf.git
-$ cd my-manga-shelf
-```
-
 ## About the User
 This app is beneficial to a user with a large manga collection.  The more they have, the harder it can be to keep track of.  My Manga Shelf allows the user to add series and volumes to their collection.  Since it is mobile-first, it is convenient for the user to access this information while they're out shopping, so they do not buy duplicates, or miss out on buying something they needed.
 
-## Features <!-- List your app features using bullets! Do NOT use a paragraph. No one will read that! -->
+## Features
 - Users will log in to the app using Google Authentication, and their data is user-specific.
 - Users are able to access a quickview of their collection and wishlist.
 - Users can add a series to their profile, either manually or by searching an external API ([Jikan API](https://jikan.moe/)) that will pre-populate data for them.
@@ -30,7 +24,41 @@ This app is beneficial to a user with a large manga collection.  The more they h
 - [Wireframes](https://www.figma.com/file/CoX3hjzOI93AqjEv1163Bk/My-Manga-Shelf?node-id=0%3A1&t=eckr9ssu9YBc8y0Q-1)
 - [Project Board](https://github.com/users/WhitleyBeers/projects/1)
 
-## Code Snippet <!-- OPTIONAL, but doesn't hurt -->
+## Get Started
+1. Set up a [Firebase](https://firebase.google.com/) project.
+2. Clone My Manga Shelf to your local machine:
+```
+$ git clone git@github.com:WhitleyBeers/My-Manga-Shelf.git
+```
+3. Move into the newly created directory and open the code:
+```
+$ cd My-Manga-Shelf
+$ code .
+```
+4. Create an .env file at the root of the project and paste the following, then put the values from your Firebase project into the empty strings:
+```
+NEXT_PUBLIC_FIREBASE_API_KEY=""
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=""
+NEXT_PUBLIC_FIREBASE_DATABASE_URL=""
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=""
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=""
+NEXT_PUBLIC_FIREBASE_APP_ID=""
+```
+5. While in your root directory, run from the terminal:
+```
+$ npm install OR npm i
+```
+```
+$ npm run prepare
+```
+6. To start the app on your local server, run from the terminal:
+```
+npm run dev
+```
+7. Go to [http://localhost:3000](http://localhost:3000) in your browser
+8. Enjoy!
+
+## Code Snippet
 ```
 <Tab eventKey="collection" title="Collection">
   {collectionVolumes.length > 0 ? (
