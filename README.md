@@ -4,6 +4,12 @@ My Manga Shelf is a mobile-first application that allows a user to keep track of
 
 [View App](https://my-manga-shelf.netlify.app/)
 
+## Get Started <!-- OPTIONAL, but doesn't hurt -->
+```
+$ git clone git@github.com:WhitleyBeers/My-Manga-Shelf.git
+$ cd my-manga-shelf
+```
+
 ## About the User
 This app is beneficial to a user with a large manga collection.  The more they have, the harder it can be to keep track of.  My Manga Shelf allows the user to add series and volumes to their collection.  Since it is mobile-first, it is convenient for the user to access this information while they're out shopping, so they do not buy duplicates, or miss out on buying something they needed.
 
