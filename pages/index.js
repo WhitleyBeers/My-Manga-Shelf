@@ -29,13 +29,13 @@ function Home() {
           <h4 className="mt-2">All Series</h4>
         </button>
         <button className="btn btn-home p-3 ms-2" type="button" onClick={() => router.push('/series/newSeries')}>
-          <img src="/add.png" alt="new series logo" style={{ height: '100px', width: '100px' }} />
+          <img src="/add.png" alt="new series logo" style={{ height: '90px', width: '90px' }} />
           <h4 className="mt-2">Add Series</h4>
         </button>
       </div>
       <div className="mt-3 mb-3">
         <button className="btn btn-home p-3 me-2" type="button" onClick={() => router.push('/recommendation')}>
-          <img src="/recommend.png" alt="recommendations logo" />
+          <img src="/recommend.png" alt="recommendations logo" style={{ height: '90px', width: '90px' }} />
           <h4 className="mt-2">Similar Manga</h4>
         </button>
         <button className="btn btn-home p-3 ms-2" type="button" onClick={() => router.push('/profile')}>
