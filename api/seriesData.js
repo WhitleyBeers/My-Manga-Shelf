@@ -16,7 +16,8 @@ const getAllSeries = (uid) => new Promise((resolve, reject) => {
     .then((response) => response.json())
     .then((data) => {
       if (data) {
-        resolve(Object.values(data));
+        const series = Object.values(data).sort((a, b) => a.title.localeCompare(b.title));
+        resolve(series);
       } else {
         resolve([]);
       }
