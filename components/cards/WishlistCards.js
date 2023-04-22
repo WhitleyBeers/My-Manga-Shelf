@@ -6,6 +6,8 @@ import {
 } from 'react-bootstrap';
 import { getWishlistVolumes } from '../../api/series_volumeData';
 
+// This is used on the WISHLIST QUICKVIEW page to show series with volumes in the wishlist
+
 export default function WishlistCards({ obj }) {
   const [volumes, setVolumes] = useState([]);
   const router = useRouter();

@@ -7,6 +7,8 @@ import { useRouter } from 'next/router';
 import { useAuth } from '../../utils/context/authContext';
 import { addSeries, updateSeries } from '../../api/seriesData';
 
+// ADDS/EDITS A SERIES, prepopulates if a result is chosen from Jikan API;  Prepopulates if series is being edited
+
 const initialState = {
   title: '',
   description: '',

@@ -6,6 +6,8 @@ import {
 import { useRouter } from 'next/router';
 import { deleteVolume, updateVolume } from '../../api/series_volumeData';
 
+// This is used on the SERIES DETAILS page to show which volumes are in the user's wishlist.  There is an extra option to "Add to Shelf" which updates the volume to owned
+
 export default function VolumeWishlistCards({ volumeObj, onUpdate }) {
   const router = useRouter();
 

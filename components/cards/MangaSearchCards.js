@@ -4,6 +4,8 @@ import { Button, Card } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 
+// This is used to show the results of searching using Jikan API
+
 export default function MangaSearchCards({ mangaObj }) {
   return (
     <Card className="my-3 p-1 text-center" style={{ color: 'black', width: '100%' }}>

@@ -6,6 +6,8 @@ import { useAuth } from '../../utils/context/authContext';
 import { getAllSeries } from '../../api/seriesData';
 import { addVolume, updateVolume } from '../../api/series_volumeData';
 
+// ADDS/EDITS A VOLUME where you can assign it to a series
+
 const initialState = {
   firebaseKey: '',
   series_id: '',
