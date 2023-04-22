@@ -11,6 +11,8 @@ const initialState = {
   isOwned: false,
 };
 
+// QUICK ADD a volume from the series page, automatically assigns the series FBkey to the volume
+
 export default function AddVolumeModal({ obj, onUpdate }) {
   const [formInput, setFormInput] = useState(initialState);
   const [show, setShow] = useState(false);
