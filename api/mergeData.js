@@ -30,6 +30,7 @@ const deleteSeriesVolumes = (seriesId) => new Promise((resolve, reject) => {
   }).catch((error) => reject(error));
 });
 
+// Gets series whose FBkey matches the series_id of volumes, filters out series that do not have volumes in the collection
 const getCollectionQuickview = (uid) => new Promise((resolve, reject) => {
   getAllSeries(uid).then((seriesArray) => {
     const filteredSeries = seriesArray.map((item) => viewSeriesCollection(item.firebaseKey));
@@ -40,6 +41,7 @@ const getCollectionQuickview = (uid) => new Promise((resolve, reject) => {
   }).catch((error) => reject(error));
 });
 
+// Gets series whose FBkey matches the series_id of volumes, filters out series that do not have volumes in the wishlist
 const getWishlistQuickview = (uid) => new Promise((resolve, reject) => {
   getAllSeries(uid).then((seriesArray) => {
     const filteredSeries = seriesArray.map((item) => viewSeriesWishlist(item.firebaseKey));
