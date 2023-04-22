@@ -6,6 +6,8 @@ import {
 import { useRouter } from 'next/router';
 import { deleteVolume } from '../../api/series_volumeData';
 
+// This is used on the SERIES DETAILS page to show which volumes are in the user's collection
+
 export default function VolumeCollectionCards({ volumeObj, onUpdate }) {
   const router = useRouter();
 

@@ -6,6 +6,8 @@ import {
 import { useRouter } from 'next/router';
 import { getOwnedVolumes } from '../../api/series_volumeData';
 
+// This is used on The Collection Quickview page to show series with volumes that are owned
+
 export default function CollectionCards({ obj }) {
   const [volumes, setVolumes] = useState([]);
   const router = useRouter();

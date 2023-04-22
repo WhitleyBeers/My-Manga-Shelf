@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import { deleteSeriesVolumes } from '../../api/mergeData';
 import { getOwnedVolumes, getWishlistVolumes } from '../../api/series_volumeData';
 
+// This is used on the ALL SERIES page to show every series the user has added, including the number of volumes in their collection/wishlist
+
 export default function SeriesCard({ seriesObj, onUpdate }) {
   const [collectionVolumes, setCollectionVolumes] = useState([]);
   const [wishlistVolumes, setWishlistVolumes] = useState([]);

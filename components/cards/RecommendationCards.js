@@ -3,6 +3,8 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
+// This is used to show the results of getting a recommendation from the Jikan API
+
 export default function RecommendationCards({ mangaObj }) {
   return (
     <Card className="rec-card my-3 p-1 text-center">
