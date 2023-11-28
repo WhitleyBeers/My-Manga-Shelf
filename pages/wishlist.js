@@ -7,7 +7,6 @@ import { useAuth } from '../utils/context/authContext';
 export default function FullWishlistView() {
   const { user } = useAuth();
   const [wishlistItems, setWishlistItems] = useState([]);
-  const controller = new AbortController();
 
   const wishlistView = () => {
     getWishlistQuickview(user.uid)
@@ -16,8 +15,7 @@ export default function FullWishlistView() {
 
   useEffect(() => {
     wishlistView();
-    return () => controller.abort();
-  });
+  }, [user]);
 
   return (
     <div className="text-center">
