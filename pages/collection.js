@@ -7,7 +7,6 @@ import { useAuth } from '../utils/context/authContext';
 export default function FullCollectionView() {
   const { user } = useAuth();
   const [collectionItems, setCollectionItems] = useState([]);
-  const controller = new AbortController();
 
   const collectionView = () => {
     getCollectionQuickview(user.uid)
@@ -16,8 +15,7 @@ export default function FullCollectionView() {
 
   useEffect(() => {
     collectionView();
-    return () => controller.abort();
-  });
+  }, [user]);
 
   return (
     <div className="text-center">
