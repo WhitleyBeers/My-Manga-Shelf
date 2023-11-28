@@ -2,7 +2,7 @@ const dbUrl = 'https://api.jikan.moe/v4';
 
 // Pulls info from the Jikan API, excludes NSFW genre
 const getMangaInformation = (query) => new Promise((resolve, reject) => {
-  fetch(`${dbUrl}/manga?q=${query}&genres_exclude=12&order_by="title"`, {
+  fetch(`${dbUrl}/manga?q=${query}&genres_exclude=12`, {
     method: 'GET',
   })
     .then((response) => response.json())
